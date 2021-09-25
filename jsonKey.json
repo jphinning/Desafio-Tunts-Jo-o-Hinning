@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "teste-desenvolvimento-326923",
+  "private_key_id": "d05e5fffab9bfb15644f5a97650b1fdbcaf99677",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC4mSVRiD81NOed\nHge0V+HnztwUVJl/PMtbuVrAy2aOpERdliuH7n8ZN490F7y48mrq6rs6q4/RQbor\nNOzlJWOttA7hS90H2gxPyaq68HSIkZawx1+1YafveMmbRfKIp+rNm2QFn0Co08Ll\nyYh7HcmtFs34XQ1RfL2oEC+uoJivX7KCsInAqp/JO6TL32OKbHgERjMzTsc9ir6E\nSlIu/naPzPy3WO8jRuA12VVobZCAQh2N+fJyeaM5AGdVk5Y7/mpEJ8u+Y88UBzPc\nH3AXpiOTlygMYWFelsitq2V/8tJOjv9a+C335y3otqmEdThL0iX3oofcshaHN/fz\nh1nb5aERAgMBAAECggEAPqnGEEpG4qHl6eDyzpZymkUPUltxi86wXZ+rHf0uAEfk\n6Tv75PXh8UZ6DPet2b546uvpyL3KYUeFkfsyW4r4rlOMJZCiJHMxcLhNm43akS2S\n0MmtRJ406sa+8VWqQhd2TntsVbg8s9LGu0hRazGub3JpUuELj1jf7Lgp54aerhEj\nD+gadd4EfygGxJprniZ6MN74V/3Q26xvbmji6qxIoLlenQJPwoALeDwEG7TCUiqm\nanOwIyuIikLGIU8Go68ap5wIBuB6NnygxwaZlaU05xC6PyjkEl4nvMHAn4T7e7yz\n+bnEd3KX56VBImXccdsq4YU1YMmxhOylZn/UkIkg7QKBgQDt7GgsQbF1qqkkgycb\n9znLx6xnud0GCHAtVPX0iidOZfUiYrdrcx9k+pYzvWbZeO+14FIdaCXJ2T/r2ETz\nrEVxhLI5rAekdi76BgfR4a5FdE3uXYpVMTUPFTN8z1rN41Y4jSpt86Ln5UCJoELf\nSpXVM66COGwqj4hV8l6faeD9SwKBgQDGn5EqtxaYfoNV5VpvoupnYqRAmzdPwKu9\niQkppeiHfR7fCFy9HG1sG5ynQgw/5U6Z1kBu+S+GOcBoqa1RDEdzFXqdazleJWai\nt3SxRn6zzqXmhZ6o5uXQh8cBPjShOvJytGA2CxEV5jhJntHrXiYh+CkDg03khts6\n0Wy5MsotkwKBgA89g3bCRoHJCsih9hFehr887Rg/2Z6XT8g3lwGxD89/zHIFbMZf\nO3WWb6Skzz/C9WfrFJd5omIJnoSW9+O79z7MRzZWhK7OOzgcxsd081rTlmJcb44B\nduqeawvlpGVn2JAKytr8LkU4dCfcsivndS2Q/+6repJHW25V9iWz/It9AoGBAJCf\nSQ0oKOy6WZjmmhXlMvY6Tcy49+o7KRGlwSUxJ4HX6e2N4jDUjRwFcugaYF758WR0\nK5BiImeCj4Xl3kvAPBogzpnmo+vYIcZi/DXEVadI1WVnb6IeFcHjy1QtXhbzm+tH\nSTKwli0y51M7sC/H6s4bKonjRokaZHCMYrTqtWm/AoGBAJVTmo7ZTAWy2RCGuaqZ\nGi6xP7XOAuoRY6gRO4FfWhqdCTUBFZaQD3MIfTye+e69SU+G8vZtWyXD5xCfyYPe\nD7me+uSPAsfaLK7FH5S+CG2gYyDRFJFFwFU0vEcQ+2QuuzqkfAx/sz73x2+C8BG1\nagIe7AmfQNioQI7RnZfliEBB\n-----END PRIVATE KEY-----\n",
+  "client_email": "engenharia-de-software-desafio@teste-desenvolvimento-326923.iam.gserviceaccount.com",
+  "client_id": "104642793980883265959",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/engenharia-de-software-desafio%40teste-desenvolvimento-326923.iam.gserviceaccount.com"
+}
