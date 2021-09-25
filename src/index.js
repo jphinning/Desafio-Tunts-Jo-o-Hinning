@@ -1,5 +1,10 @@
 const {google} = require('googleapis')
 
+/**
+ * Google API Object used for authenticating reading and writing spreadsheet functions
+ * 
+ * @returns {object} Important parameters to access the spreadsheet
+ */
 const googleApiObject = async () => {
 
     const auth = new google.auth.GoogleAuth({
@@ -20,13 +25,10 @@ const googleApiObject = async () => {
     }
 }
 
-
 const readSpreadsheet = async () => {
 
     //Connecting to the googleAPI
     const {auth, googleSheetsInstance, spreadsheetId} = await googleApiObject()
-    
-    console.log("Getting SpreadSheet Data...")
 
     const readData = await googleSheetsInstance.spreadsheets.values.get({
         auth, 
@@ -41,6 +43,8 @@ const writeSpreadsheet = async (studentSituation) => {
 
     //Connecting to the googleAPI
     const {auth, googleSheetsInstance, spreadsheetId} = await googleApiObject()
+
+    console.log("Writting the Following Information to the Spreadsheet:...")
 
     await googleSheetsInstance.spreadsheets.values.clear({
         spreadsheetId,
@@ -58,8 +62,13 @@ const writeSpreadsheet = async (studentSituation) => {
     })
 }
 
+/**
+ * Gets the number of classes in the semester in the spreadsheet
+ * 
+ * @returns {number}
+ */
 const getSpreadsheetTotalClasses = async () => {
-
+    console.log("Getting Total Number of Classes in the Semester...")
     const data = await readSpreadsheet()
     let getNumberFromString = 0
     const spreadSheetTotalClasses = data.values.splice(1,1)
@@ -73,6 +82,11 @@ const getSpreadsheetTotalClasses = async () => {
     return getNumberFromString
 }
 
+/**
+ * Gets all student information, cutting the headers from the spreadsheet array 
+ * 
+ * @returns {Array}
+ */
 const getSpreadsheetStudentInformation = async () => {
 
     const data = await readSpreadsheet()
@@ -83,8 +97,14 @@ const getSpreadsheetStudentInformation = async () => {
 
 }
 
+/**
+ * Gets all grades and calculates the average in the semester
+ * 
+ * @returns {Array} Average grades for each student
+ */
 const calculateAverageGrade = async () => {
 
+    console.log("Calculating Average Grade For Each Student...")
     //Storing all average grades
     let studentsAverageGrade = []
 
@@ -111,11 +131,16 @@ const calculateAverageGrade = async () => {
     return studentsAverageGrade
 }
 
+/**
+ * Gets the absences row for each student
+ * 
+ * @returns {number} 
+ */
 const studentsAbsences = async () => { 
 
     //Storing all absences
     let absences = []
-
+    console.log("Calculating Absences For Each Student...")
     const studentInformation = await getSpreadsheetStudentInformation()
 
     studentInformation.forEach(student => {
@@ -129,9 +154,16 @@ const studentsAbsences = async () => {
     return absences
 }
 
-
+/**
+ * Determines wether the student Passed, Failed, or is in the Final Exam
+ * Also calculates mininal passing grade on the latter situation 
+ * 
+ * @param {Array} averageGrades Array containg all average grades for each student
+ * @param {number} totalClasses Number of classes in the semester on the spreadsheet
+ */
 const determineStudentSituation = async (averageGrades, totalClasses) => {
 
+    console.log("Calculating the Student Situation in the Semester and Final Exam Minimal Grade...")
     const studentAbsences = await studentsAbsences()
     
     let studentSituation = []
@@ -139,24 +171,23 @@ const determineStudentSituation = async (averageGrades, totalClasses) => {
     averageGrades.forEach( (grade, index) => {
         
         if (parseInt(studentAbsences[index]) > (totalClasses * 0.25)){
-            studentSituation.push(["Reprovado por Falta", "0"])
+            studentSituation.push(["Reprovado por Falta", 0])
         }
         else if (grade < 50) {
-            studentSituation.push(["Reprovado por nota", "0"])
+            studentSituation.push(["Reprovado por nota", 0])
         }
         else  if (grade >= 50 && grade < 70) {
             const NAF = 100 - grade
             studentSituation.push(["Exame Final", NAF])
         }
         else if (grade >= 70){
-            studentSituation.push(["Aprovado", "0"])
+            studentSituation.push(["Aprovado", 0])
         }
         
     })
 
-    console.log(studentSituation)
-
     await writeSpreadsheet(studentSituation)
+    console.log(studentSituation)
 }
 
 
